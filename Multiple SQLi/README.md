@@ -80,12 +80,10 @@ Authenticated user can execute any SQL command in the database. If successfully 
 1. In the **bulk_import function**, based on the deserialized key/value pair(saved when **save_fields_function** is called), different import addons file is getting called based on the switch statement. In this case it is ‘**POLYLANG’**
     
     ![                                                      *File path: SaveMapping.php#L466-469*](Multiple%20SQL%20Injection%20in%20Import%20Module%208e67b6ab9e034c8893dd1a5abada4965/Untitled%2011.png)
-    
-                                                          *File path: SaveMapping.php#L466-469*
+*File path: SaveMapping.php#L466-469*
     
 
 2.  In the **polylang_import_function**, values from the csv column, is directly being used in the **$wpdb->get_results()** which results into multiple SQL Injection vulnerability.
 
-![                                                         *File path: importExtensions/PolylangImport.php#L70-100*](Multiple%20SQL%20Injection%20in%20Import%20Module%208e67b6ab9e034c8893dd1a5abada4965/Untitled%2012.png)
-
-                                                         *File path: importExtensions/PolylangImport.php#L70-100*
+    ![                                                         *File path: importExtensions/PolylangImport.php#L70-100*](Multiple%20SQL%20Injection%20in%20Import%20Module%208e67b6ab9e034c8893dd1a5abada4965/Untitled%2012.png)
+*File path: importExtensions/PolylangImport.php#L70-100*
